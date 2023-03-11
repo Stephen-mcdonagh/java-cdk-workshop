@@ -1,0 +1,4 @@
+com/myorg/LambdaStack.class
+com/myorg/SqsSnsStack.class
+com/myorg/CodePipelineStack.class
+com/myorg/CdkApp.class

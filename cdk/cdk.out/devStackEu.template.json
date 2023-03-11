@@ -1,0 +1,269 @@
+{
+ "Resources": {
+  "CdkExampleQueue7618E31B": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "QueueName": "CdkExampleQueue1",
+    "VisibilityTimeout": 60
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue/Resource"
+   }
+  },
+  "CdkExampleQueuePolicy839151B5": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:SendMessage",
+       "Condition": {
+        "ArnEquals": {
+         "aws:SourceArn": {
+          "Ref": "cdkExampleTopic5D0C0043"
+         }
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "sns.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "CdkExampleQueue7618E31B",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "CdkExampleQueue7618E31B"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue/Policy/Resource"
+   }
+  },
+  "CdkExampleQueuedevStackEucdkExampleTopic6AF13CEF23DD0784": {
+   "Type": "AWS::SNS::Subscription",
+   "Properties": {
+    "Protocol": "sqs",
+    "TopicArn": {
+     "Ref": "cdkExampleTopic5D0C0043"
+    },
+    "Endpoint": {
+     "Fn::GetAtt": [
+      "CdkExampleQueue7618E31B",
+      "Arn"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue/devStackEucdkExampleTopic6AF13CEF/Resource"
+   }
+  },
+  "CdkExampleQueue2E9A473CE": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "QueueName": "CdkExampleQueue2",
+    "VisibilityTimeout": 60
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue2/Resource"
+   }
+  },
+  "CdkExampleQueue2PolicyCA40193F": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:SendMessage",
+       "Condition": {
+        "ArnEquals": {
+         "aws:SourceArn": {
+          "Ref": "cdkExampleTopic2BB68B8FB"
+         }
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "sns.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "CdkExampleQueue2E9A473CE",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "CdkExampleQueue2E9A473CE"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue2/Policy/Resource"
+   }
+  },
+  "CdkExampleQueue2devStackEucdkExampleTopic2AC93F59EBAB69EEB": {
+   "Type": "AWS::SNS::Subscription",
+   "Properties": {
+    "Protocol": "sqs",
+    "TopicArn": {
+     "Ref": "cdkExampleTopic2BB68B8FB"
+    },
+    "Endpoint": {
+     "Fn::GetAtt": [
+      "CdkExampleQueue2E9A473CE",
+      "Arn"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue2/devStackEucdkExampleTopic2AC93F59E/Resource"
+   }
+  },
+  "CdkExampleQueue33C25D394": {
+   "Type": "AWS::SQS::Queue",
+   "Properties": {
+    "QueueName": "CdkExampleQueue3",
+    "VisibilityTimeout": 60
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue3/Resource"
+   }
+  },
+  "CdkExampleQueue3Policy8666F732": {
+   "Type": "AWS::SQS::QueuePolicy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sqs:SendMessage",
+       "Condition": {
+        "ArnEquals": {
+         "aws:SourceArn": {
+          "Ref": "cdkExampleTopic2BB68B8FB"
+         }
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "sns.amazonaws.com"
+       },
+       "Resource": {
+        "Fn::GetAtt": [
+         "CdkExampleQueue33C25D394",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Queues": [
+     {
+      "Ref": "CdkExampleQueue33C25D394"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue3/Policy/Resource"
+   }
+  },
+  "CdkExampleQueue3devStackEucdkExampleTopic2AC93F59E0E776D8F": {
+   "Type": "AWS::SNS::Subscription",
+   "Properties": {
+    "Protocol": "sqs",
+    "TopicArn": {
+     "Ref": "cdkExampleTopic2BB68B8FB"
+    },
+    "Endpoint": {
+     "Fn::GetAtt": [
+      "CdkExampleQueue33C25D394",
+      "Arn"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CdkExampleQueue3/devStackEucdkExampleTopic2AC93F59E/Resource"
+   }
+  },
+  "cdkExampleTopic5D0C0043": {
+   "Type": "AWS::SNS::Topic",
+   "Properties": {
+    "TopicName": "ExampleTopic1"
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/cdkExampleTopic/Resource"
+   }
+  },
+  "cdkExampleTopic2BB68B8FB": {
+   "Type": "AWS::SNS::Topic",
+   "Properties": {
+    "TopicName": "ExampleTopic2"
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/cdkExampleTopic2/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WKwQ7CIBBEv6V3WIt+gjdP2no3dMVkbYXKgsYQ/t1SEhMvM29eZgs7BarRb5Z4HeVEA6Q+aBzFoi6JnwzpFE00Yn+zFdY8uonw85N1ZsF2+fdxYPQ0B3K2PP722c2Exa6Qc8HOsIseTRYH/dIbpaAF1TZ3JpI+2kAPA13tL5qRd6SwAAAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "devStackEu/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

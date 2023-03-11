@@ -1,0 +1,273 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "devStackEu.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "devStackEu.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "devStackEu": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://252819530464/eu-west-1",
+      "properties": {
+        "templateFile": "devStackEu.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::252819530464:role/cdk-hnb659fds-deploy-role-252819530464-eu-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::252819530464:role/cdk-hnb659fds-cfn-exec-role-252819530464-eu-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-252819530464-eu-west-1/aa423ba6382032b3573ac499d6fd8605c35dc41f871b08c9f073846515278074.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "devStackEu.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::252819530464:role/cdk-hnb659fds-lookup-role-252819530464-eu-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "devStackEu.assets"
+      ],
+      "metadata": {
+        "/devStackEu/CdkExampleQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueue7618E31B"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueuePolicy839151B5"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue/devStackEucdkExampleTopic6AF13CEF/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueuedevStackEucdkExampleTopic6AF13CEF23DD0784"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueue2E9A473CE"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue2/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueue2PolicyCA40193F"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue2/devStackEucdkExampleTopic2AC93F59E/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueue2devStackEucdkExampleTopic2AC93F59EBAB69EEB"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueue33C25D394"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue3/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueue3Policy8666F732"
+          }
+        ],
+        "/devStackEu/CdkExampleQueue3/devStackEucdkExampleTopic2AC93F59E/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CdkExampleQueue3devStackEucdkExampleTopic2AC93F59E0E776D8F"
+          }
+        ],
+        "/devStackEu/cdkExampleTopic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkExampleTopic5D0C0043"
+          }
+        ],
+        "/devStackEu/cdkExampleTopic2/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "cdkExampleTopic2BB68B8FB"
+          }
+        ],
+        "/devStackEu/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/devStackEu/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/devStackEu/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "devStackEu"
+    },
+    "devLambdaStackEu.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "devLambdaStackEu.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "devLambdaStackEu": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://252819530464/eu-west-1",
+      "properties": {
+        "templateFile": "devLambdaStackEu.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::252819530464:role/cdk-hnb659fds-deploy-role-252819530464-eu-west-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::252819530464:role/cdk-hnb659fds-cfn-exec-role-252819530464-eu-west-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-252819530464-eu-west-1/f003bfa16ad36bb2ddb616308fa1cd6ae8dca6671ba534cd949b4bce3a247611.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "devLambdaStackEu.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::252819530464:role/cdk-hnb659fds-lookup-role-252819530464-eu-west-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "devLambdaStackEu.assets"
+      ],
+      "metadata": {
+        "/devLambdaStackEu/HelloHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandlerServiceRole11EF7C63"
+          }
+        ],
+        "/devLambdaStackEu/HelloHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HelloHandler2E4FBA4D"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointEEF1FD8F"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointCloudWatchRoleC3C64E0F"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointAccountB8304247"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointDeployment318525DA12a87661b593d06c8f0bc667ee76cd5e"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointDeploymentStageprodB78BEEA0"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Endpoint8024A810"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Endpointproxy39E2174E"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Default/{proxy+}/ANY/ApiPermission.devLambdaStackEuEndpointACC27E22.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointproxyANYApiPermissiondevLambdaStackEuEndpointACC27E22ANYproxyB9A83A1A"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Default/{proxy+}/ANY/ApiPermission.Test.devLambdaStackEuEndpointACC27E22.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointproxyANYApiPermissionTestdevLambdaStackEuEndpointACC27E22ANYproxy6856D34C"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointproxyANYC09721C5"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Default/ANY/ApiPermission.devLambdaStackEuEndpointACC27E22.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointANYApiPermissiondevLambdaStackEuEndpointACC27E22ANYBD9AA7B9"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Default/ANY/ApiPermission.Test.devLambdaStackEuEndpointACC27E22.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointANYApiPermissionTestdevLambdaStackEuEndpointACC27E22ANY8BAB4D48"
+          }
+        ],
+        "/devLambdaStackEu/Endpoint/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EndpointANY485C938B"
+          }
+        ],
+        "/devLambdaStackEu/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/devLambdaStackEu/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/devLambdaStackEu/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "devLambdaStackEu"
+    }
+  }
+}
